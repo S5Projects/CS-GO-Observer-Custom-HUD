@@ -266,6 +266,7 @@ $(document).ready(function () {
             $("#header").slideDown(durations.header)
             $("#left").animate({ "left": "0" }, durations.teams);
             $("#right").animate({ "right": '0' }, durations.teams);
+            $("#player-container").fadeIn(durations.stats)
             setTimeout(function(){
                 $("#stats-container,#right_stats,#left_stats").fadeIn(durations.stats)
                 console.log('stats delay fading')
@@ -278,7 +279,8 @@ $(document).ready(function () {
             $("#header").slideUp(durations.header)
             $("#left").animate({ "left": "-500" }, durations.teams);
             $("#right").animate({ "right": '-500' }, durations.teams);
-            $("#stats-container").hide(durations.stats)
+            $("#stats-container").fadeOut(durations.stats)
+            $("#player-container").fadeOut(durations.stats)
         });
         /*
         io.on('observer', function (duration) {
