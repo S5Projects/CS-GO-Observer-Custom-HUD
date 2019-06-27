@@ -278,7 +278,7 @@ $(document).ready(function () {
             $("#header").slideUp(durations.header)
             $("#left").animate({ "left": "-500" }, durations.teams);
             $("#right").animate({ "right": '-500' }, durations.teams);
-            $("#stats-container").fadeOut(durations.stats)
+            $("#stats-container").hide(durations.stats)
         });
         /*
         io.on('observer', function (duration) {
