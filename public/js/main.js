@@ -260,6 +260,20 @@ $(document).ready(function () {
         io.on('refresh', function(data){
             location.reload();
         });
+        io.on('show', function (duration) {
+            console.log("show request")
+            $("body").fadeIn(duration)
+        });
+        io.on('hide', function (duration) {
+            console.log("hide request")
+            $("body").fadeOut(duration)
+        });
+        /*
+        io.on('observer', function (duration) {
+            console.log("observer request")
+            $("observer").slideToggle().animate({ opacity: 1 },{ queue: false, duration: 500 });
+        });
+        */
         io.emit('ready', true);
     }
     load(listener);

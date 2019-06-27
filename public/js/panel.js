@@ -54,6 +54,15 @@ $(document).ready(() => {
 	$("#ref").click(() => {
 		io.emit("refresh", true);
 	});
+	$("#show").click(() => {
+		io.emit("show", 500);
+	});
+	$("#hide").click(() => {
+		io.emit("hide", 500);
+	});
+	$("#observer").click(() => {
+		//io.emit("observer", 500); // testing,toggle observer info
+	});
 	io.on('match', loadMatch);
 	loadMatch();
 	io.emit("ready", true);
