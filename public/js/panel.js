@@ -55,10 +55,21 @@ $(document).ready(() => {
 		io.emit("refresh", true);
 	});
 	$("#show").click(() => {
-		io.emit("show", 500);
+		var durations = {
+			header: 500,
+			teams: 500,
+			stats: 500,
+			stats_delay: 750
+		}
+		io.emit("show", durations);
 	});
 	$("#hide").click(() => {
-		io.emit("hide", 500);
+		var durations = {
+			header: 500,
+			teams: 500,
+			stats: 200,
+		}
+		io.emit("hide", durations);
 	});
 	$("#observer").click(() => {
 		//io.emit("observer", 500); // testing,toggle observer info

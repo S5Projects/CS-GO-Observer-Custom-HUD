@@ -260,13 +260,25 @@ $(document).ready(function () {
         io.on('refresh', function(data){
             location.reload();
         });
-        io.on('show', function (duration) {
+        io.on('show', function (durations) {
             console.log("show request")
-            $("body").fadeIn(duration)
+            console.log(durations)
+            $("#header").slideDown(durations.header)
+            $("#left").animate({ "left": "0" }, durations.teams);
+            $("#right").animate({ "right": '0' }, durations.teams);
+            setTimeout(function(){
+                $("#stats-container,#right_stats,#left_stats").fadeIn(durations.stats)
+                console.log('stats delay fading')
+            }, durations.stats_delay)
         });
-        io.on('hide', function (duration) {
+        io.on('hide', function (durations) {
             console.log("hide request")
-            $("body").fadeOut(duration)
+            console.log(durations)
+            //$("body").fadeOut(duration)
+            $("#header").slideUp(durations.header)
+            $("#left").animate({ "left": "-500" }, durations.teams);
+            $("#right").animate({ "right": '-500' }, durations.teams);
+            $("#stats-container").fadeOut(durations.stats)
         });
         /*
         io.on('observer', function (duration) {

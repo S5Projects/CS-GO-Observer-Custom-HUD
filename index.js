@@ -172,14 +172,14 @@ io.on('connection', (socket) => {
     socket.on('refresh', (data) => {
         io.emit('refresh', data);
     });
-    socket.on('show', (duration) => {
-        io.emit('show', duration);
+    socket.on('show', (durations) => {
+        io.emit('show', durations);
     });
-    socket.on('hide', (duration) => {
-        io.emit('hide', duration);
+    socket.on('hide', (durations) => {
+        io.emit('hide', durations);
     });
-    socket.on('observer', (duration) => {
-        io.emit('observer', duration);
+    socket.on('observer', (durations) => {
+        io.emit('observer', durations);
     });
 });
 
