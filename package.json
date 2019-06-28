@@ -13,7 +13,6 @@
     "fs": "latest",
     "http": "latest",
     "ip": "latest",
-    "jquery-animate-gradient": "^1.1.10",
     "multer": "latest",
     "nedb": "latest",
     "pug": "latest",
