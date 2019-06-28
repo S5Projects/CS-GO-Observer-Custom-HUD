@@ -151,6 +151,26 @@
 
 	}
 
+	#observer-container {
+		position: fixed;
+		bottom: 100px;
+		font-family: 'Saira Semi Condensed', sans-serif;
+		left: 50%;
+		margin-left: -460px;
+		height: 70px;
+		width: 920px;
+	}
+	#observer-container.no-avatar {
+		margin-left: -390.5px;
+		width: 781px;
+	}
+	#observer-container #container2 #second_row{
+		background-color:white;
+	}
+	#observer-container #container2 #first_row #current_nick{
+		color: white;
+	}
+
 	.st_left {
 		float: left;
 		text-align: left;

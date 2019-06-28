@@ -282,12 +282,16 @@ $(document).ready(function () {
             $("#stats-container").fadeOut(durations.stats)
             $("#player-container").fadeOut(durations.stats)
         });
-        /*
-        io.on('observer', function (duration) {
-            console.log("observer request")
-            $("observer").slideToggle().animate({ opacity: 1 },{ queue: false, duration: 500 });
+        io.on('observer_show', function (duration) {
+            console.log("observer show request")
+            $("#observer-container").fadeIn(duration)
+            $("#player-container").fadeOut(duration)
         });
-        */
+        io.on('observer_hide', function (duration) {
+            console.log("observer hide request")
+            $("#observer-container").fadeOut(duration)
+            $("#player-container").fadeIn(duration)
+        });
         io.emit('ready', true);
     }
     load(listener);

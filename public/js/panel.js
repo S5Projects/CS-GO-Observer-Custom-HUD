@@ -71,8 +71,11 @@ $(document).ready(() => {
 		}
 		io.emit("hide", durations);
 	});
-	$("#observer").click(() => {
-		//io.emit("observer", 500); // testing,toggle observer info
+	$("#observer_show").click(() => {
+		io.emit("observer_show", 500); // testing,toggle observer info
+	});
+	$("#observer_hide").click(() => {
+		io.emit("observer_hide", 500); // testing,toggle observer info
 	});
 	io.on('match', loadMatch);
 	loadMatch();

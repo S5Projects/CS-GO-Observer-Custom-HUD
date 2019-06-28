@@ -178,8 +178,11 @@ io.on('connection', (socket) => {
     socket.on('hide', (durations) => {
         io.emit('hide', durations);
     });
-    socket.on('observer', (durations) => {
-        io.emit('observer', durations);
+    socket.on('observer_show', (duration) => {
+        io.emit('observer_show', duration);
+    });
+    socket.on('observer_hide', (duration) => {
+        io.emit('observer_hide', duration);
     });
 });
 

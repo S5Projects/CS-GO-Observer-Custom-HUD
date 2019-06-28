@@ -40,6 +40,15 @@ html
               .block
               .block
             #match_info Best Of 3
+      #defuser
+        #defuser_title
+          | DEFUSE TIME
+        #defuse_bar
+        #defuse_time
+          | 10:00
+      #who_won
+        #winning_team
+        div win the round!
       #stats-container
         #left_stats
           #stats_player1.stats_player.st_left
@@ -96,6 +105,15 @@ html
               #kills_count.inlining 13
               #assist_count.inlining 13
               #death_count.inlining 13
+      #observer-container
+        #avatar_container(style="width:139px; height:139px; margin-top:-70px; float:left;")
+        #container2(style="width:781px; margin-left:139px;")
+          #first_row
+            #current_nick
+              | [OBSERVER] Mr.observer
+          #second_row
+            #nick_also.inlining
+              | MyNameIsObserver
       #left.team
         .money
           img.invert(src='/files/img/elements/team.png', style='max-height: 70%; margin-top:10px; margin-left:10px; float:left;')
