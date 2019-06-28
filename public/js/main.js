@@ -40,6 +40,7 @@ function loadAvatar(steamid, callback) {
 }
 
 $(document).ready(function () {
+    $("#observer-container").hide();
     var slotted = [];
     var meth = {
         getTeamOne: function(){
@@ -280,6 +281,7 @@ $(document).ready(function () {
             $("#left").animate({ "left": "-500" }, durations.teams);
             $("#right").animate({ "right": '-500' }, durations.teams);
             $("#stats-container").fadeOut(durations.stats)
+            $("#observer-container").fadeOut(durations.stats)
             $("#player-container").fadeOut(durations.stats)
         });
         io.on('observer_show', function (duration) {
