@@ -103,7 +103,6 @@ function fillPlayer(player, nr, side, max) {
     let $bottom = $player.find(".bottom_bar");
     let $top = $player.find(".bar1");
 
-    let gradient = "linear-gradient(to " + side + ", rgba(0,0,0,0) " + (100 - statistics.health) + "%, " + health_color + " " + (100 - statistics.health) + "%)";
     let oldhp = $top.find("#hp_p").text();
 
     $top.find("#bar_username").text(player.name.split(" ").join(""));
@@ -111,8 +110,7 @@ function fillPlayer(player, nr, side, max) {
 
     $top.find("#hp_p").text(statistics.health);
     if (oldhp != statistics.health) {
-        console.log(`${$top.find("#bar_username").text()}'s OLD HP : ${oldhp},Current HP : ${statistics.health}`)
-        hpAnim(steamid, $top.find(".hp_bar"), side, oldhp, statistics.health, health_color)
+        updateHp($top.find(".hp_bar"), side, oldhp, statistics.health, health_color)
     }
     //$top.find(".hp_bar").css("background", gradient);
     /*$top.find(".hp_bar").animate({
@@ -204,7 +202,7 @@ function resetBomb() {
     $("#bomb_timer").css("display", "none");
 }
 
-function hpAnim(name, el, side, oldhp, hp, color) {
+function updateHp(el, side, oldhp, hp, color) {
     let obj = { count: oldhp }
 
     TweenMax.to(obj, 2, {
@@ -212,7 +210,6 @@ function hpAnim(name, el, side, oldhp, hp, color) {
         ease: Power3.easeInOut,
         onUpdate: () => {
             let gradient = `linear-gradient(to ${side},rgba(0,0,0,0) ${100 - obj.count}%,${color} ${100 - obj.count}%)`;
-            console.log(`RESULT : ${obj.count}`)
             el.css({
                 "background": gradient
             })
