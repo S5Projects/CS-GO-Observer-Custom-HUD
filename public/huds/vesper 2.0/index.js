@@ -1,4 +1,4 @@
-
+// Official HUD for eFire League (https://efire.gg) - Powered by Vesper platform
 var teams = {
     left: {},
     right: {}
@@ -46,7 +46,6 @@ function fillObserved(player) {
         }
         if (weapon.state == "active" || weapon.state == "reloading") {
             if (weapon.type == "Grenade" || weapon.type == "C4" || weapon.type == "Knife" || statistics.health == 0) {
-
                 $(".clip").html("");
                 $(".reserve").html("");
             } else {
@@ -96,19 +95,27 @@ function fillPlayer(player,nr, side, max){
 
     let team = player.team.toLowerCase();
 
-    let health_color = statistics.health <= 20 ? "#e74c3c" : team == "ct" ? "#5788a8":"#c19511";
+    let health_color = statistics.health <= 20 ? "#f44336" : team == "ct" ? "#03a9f4":"#ffa000";
 
     let $player = $("#"+side).find("#player"+(nr+1));
 
     let $bottom = $player.find(".bottom_bar");
     let $top = $player.find(".bar1");
 
+    let death_css = {
+        "height":"30px",
+        "margin-top":"-2px",
+    }
+
     let gradient = "linear-gradient(to " + side +", rgba(0,0,0,0) " + (100-statistics.health) + "%, " + health_color + " " + (100-statistics.health) + "%)";
+
+    $player.css("background", statistics.health == 0 ? "linear-gradient(to " + side + ", rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.45))" : "");
 
     $top.find("#bar_username").text(player.name.split(" ").join(""));
     $top.find("#bar_username").removeClass("dead").addClass(statistics.health == 0 ? "dead" : "");
 
-    $top.find("#hp_p").text(statistics.health);
+    $top.find("#hp_p").text(statistics.health > 0 ? statistics.health : "");
+    $top.find("#hp_p").prepend(statistics.health == 0 ? $("<img />").attr("src", "/files/img/death.png").css(death_css) : "");
     $top.find(".hp_bar").css("background", gradient);
 
     $bottom.find(".kills").text(statistics.kills);
@@ -126,7 +133,8 @@ function fillPlayer(player,nr, side, max){
     if(statistics.round_kills > 0){
         let img_css = {
             "text-shadow":"0 0 10px black",
-            "float": side
+            "float": side,
+            "padding-top":"3px"
         };
         $bottom.find("#weapon_icon").prepend($("<img />").attr("src", "/files/img/death.png").addClass("death").css("float", side)).prepend($("<div></div>").text(statistics.round_kills).css(img_css));
     }
@@ -311,6 +319,8 @@ function updatePage(data) {
             .addClass(test_player2.team.toLowerCase() != "t"
                 ? "t-color"
                 : "ct-color");
+        $("#team_1").css("border-bottom", test_player2.team.toLowerCase() != "t" ? "1px solid #29B6F6" : "1px solid #FFCA28")
+        $("#team_2").css("border-bottom", test_player2.team.toLowerCase() != "t" ? "1px solid #29B6F6" : "1px solid #FFCA28")
 
         $("#left")
             .find("#team_money_1")
@@ -401,7 +411,7 @@ function updatePage(data) {
                     isDefusing = true;
                 }
                 var seconds = Math.round(parseFloat(phase.phase_ends_in).toFixed(1));
-                $("#defuse_bar").css("width", 350 * (parseFloat(phase.phase_ends_in) / longd) + "px");
+                $("#defuse_bar").css("height", 150 * (parseFloat(phase.phase_ends_in) / longd) + "px");
                 $("#defuse_time").text("00:" + (seconds < 10 ? "0" + seconds : seconds));
             }
         } else {

@@ -54,6 +54,14 @@ $(document).ready(() => {
 	$("#ref").click(() => {
 		io.emit("refresh", true);
 	});
+	$("#observer_show").click(() => {
+		console.log('show observer info')
+		io.emit("observer_show", true);
+	});
+	$("#observer_hide").click(() => {
+		console.log('hide observer info')
+		io.emit("observer_hide", true);
+	});
 	io.on('match', loadMatch);
 	loadMatch();
 	io.emit("ready", true);

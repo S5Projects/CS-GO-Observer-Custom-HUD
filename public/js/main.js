@@ -260,6 +260,16 @@ $(document).ready(function () {
         io.on('refresh', function(data){
             location.reload();
         });
+        io.on('observer_show', function (data) {
+            console.log('show observer info')
+            $("#observer-container").fadeIn(500);
+            $("#player-container").fadeOut(500);
+        });
+        io.on('observer_hide', function (data) {
+            console.log('hide observer info')
+            $("#observer-container").fadeOut(500);
+            $("#player-container").fadeIn(500);
+        });
         io.emit('ready', true);
     }
     load(listener);

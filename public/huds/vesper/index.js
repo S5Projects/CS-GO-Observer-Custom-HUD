@@ -96,7 +96,7 @@ function fillPlayer(player,nr, side, max){
 
     let team = player.team.toLowerCase();
 
-    let health_color = statistics.health <= 20 ? "#e74c3c" : team == "ct" ? "#5788a8":"#c19511";
+    let health_color = statistics.health <= 20 ? "#f44336" : team == "ct" ? "#03a9f4":"#ffa000";
 
     let $player = $("#"+side).find("#player"+(nr+1));
 
@@ -104,6 +104,8 @@ function fillPlayer(player,nr, side, max){
     let $top = $player.find(".bar1");
 
     let gradient = "linear-gradient(to " + side +", rgba(0,0,0,0) " + (100-statistics.health) + "%, " + health_color + " " + (100-statistics.health) + "%)";
+
+    $player.css("background", statistics.health == 0 ? "linear-gradient(to " + side + ", rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.45))" : "");
 
     $top.find("#bar_username").text(player.name.split(" ").join(""));
     $top.find("#bar_username").removeClass("dead").addClass(statistics.health == 0 ? "dead" : "");
@@ -126,7 +128,8 @@ function fillPlayer(player,nr, side, max){
     if(statistics.round_kills > 0){
         let img_css = {
             "text-shadow":"0 0 10px black",
-            "float": side
+            "float": side,
+            "padding-top":"5px"
         };
         $bottom.find("#weapon_icon").prepend($("<img />").attr("src", "/files/img/death.png").addClass("death").css("float", side)).prepend($("<div></div>").text(statistics.round_kills).css(img_css));
     }
@@ -382,7 +385,7 @@ function updatePage(data) {
     //PHASESc
     if (phase) {
         $("#time_counter").css("color", (phase.phase == "live" || phase.phase == "over" || phase.phase == "warmup" || (phase.phase == "freezetime" && phase.phase_ends_in > 10))
-            ? "white"
+            ? "#ccff00"
             : "red");
         $("#defuser").css("display", phase.phase == "defuse"
             ? "block"
@@ -401,7 +404,7 @@ function updatePage(data) {
                     isDefusing = true;
                 }
                 var seconds = Math.round(parseFloat(phase.phase_ends_in).toFixed(1));
-                $("#defuse_bar").css("width", 350 * (parseFloat(phase.phase_ends_in) / longd) + "px");
+                $("#defuse_bar").css("height", 150 * (parseFloat(phase.phase_ends_in) / longd) + "px");
                 $("#defuse_time").text("00:" + (seconds < 10 ? "0" + seconds : seconds));
             }
         } else {

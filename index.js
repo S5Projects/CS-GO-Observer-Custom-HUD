@@ -172,6 +172,14 @@ io.on('connection', (socket) => {
     socket.on('refresh', (data) => {
         io.emit('refresh', data);
     });
+    socket.on('observer_show', (data) => {
+        console.log('show observer info')
+        io.emit('observer_show', data);
+    });
+    socket.on('observer_hide', (data) => {
+        console.log('hide observer info')
+        io.emit('observer_hide', data);
+    });
 });
 
 express.listen(config.ServerPort, address || 'localhost', () => {
