@@ -1,5 +1,5 @@
 {
-    "GameStateIntegrationPort":1337,
+    "GameStateIntegrationPort":1370,
     "ServerPort":2626,
     "SteamApiKey":"",
     "DisplayAvatars":false,

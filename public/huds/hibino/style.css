@@ -1,0 +1,1529 @@
+@import url('https://fonts.googleapis.com/css?family=Saira+Semi+Condensed');
+@import url(https://use.typekit.net/jsj3kqp.css);
+@import url(https://fonts.googleapis.com/css?family=Noto+Sans+JP&display=swap);
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+	font-family: industry, sans-serif;
+	color: white;
+	background-color: rgba(0, 0, 0, 0);
+	font-style: normal;
+	font-weight: 200;
+}
+#defuser {
+  width:150px;
+  height:150px;
+  background: rgba(0, 0, 0, 0.7);
+  /* background-image:url("/files/img/elements/defusing.png"); */
+  position:absolute;
+  margin-left:46%;
+  bottom:280px;
+  font-family: industry, sans-serif;
+}
+#defuser_title{
+  position:absolute;
+  left:28px;
+  top:55px;
+  height:50px;
+  font-size:18px;
+}
+#defuser_title img {
+	position: absolute;
+	top: -30px;
+	left: 30px;
+}
+#defuse_bar{
+	background: linear-gradient(to right, rgba(135,206,250, 1), rgba(25,25,112, 0.4));
+	width:140px;
+	height:140px;
+	position:absolute;
+	left: 5px;
+	top: 5px;
+}
+#defuse_time{
+  position:absolute;
+  left:30px;
+  top:85px;
+  height:50px;
+  font-size:28px;
+  font-weight: bold;
+}
+
+#bomb_timer{
+	width: 114px;
+	height: 55px;
+	max-height: 55px;
+	position:absolute;
+	top: 5px;
+	left: 469px;
+	background: linear-gradient(rgba(0,0,0,0) 0%,#ff0000 0%);
+}
+	#team_1 > #team_logo > #team_flag {
+		position: absolute;
+		z-index: -1;
+		display: block;
+		left: -6px;
+		background-repeat: no-repeat;
+		background-position: 0% 50%;
+		width: 90px;
+		height: 55px;
+		-webkit-filter: blur(2px);
+		-moz-filter: blur(2px);
+		-o-filter: blur(2px);
+		-ms-filter: blur(2px);
+		filter: blur(2px);
+	}
+	#team_2 > #team_logo > #team_flag {
+		position: absolute;
+		z-index: -1;
+		display: block;
+		left: -8px;
+		background-repeat: no-repeat;
+		background-position: left center;
+		width: 90px;
+		height: 55px;
+		-webkit-filter: blur(2px);
+		-moz-filter: blur(2px);
+		-o-filter: blur(2px);
+		-ms-filter: blur(2px);
+		filter: blur(2px);
+	}
+
+	::-webkit-scrollbar {
+		display: none;
+	}
+
+	.color {
+		position: fixed;
+		width: 100%;
+		height: 100%;
+		transition: color .25s ease-in-out;
+	}
+
+	#timer {
+		position: relative;
+		margin: auto;
+		margin-top: 20px;
+		text-align: center;
+	}
+
+	.time {
+		font-size: 7em;
+		transition: .25s ease-in-out;
+	}
+	.first_title_tm {
+		font-size: 12px;
+		height: 20px;
+		display: table-cell;
+		vertical-align: bottom;
+		margin-top: 5px;
+		font-weight: 500;
+	}
+	.invert {
+		filter: invert(100%);
+	}
+	.first_tm {
+		height: 40%;
+		top: 40px;
+		font-size: 20px;
+		margin-top: -2px;
+	}
+
+	#player-container {
+		position: fixed;
+		bottom: 100px;
+		font-family: industry, sans-serif;
+		left: 50%;
+		margin-left: -300px;
+		height: 139px;
+		width: 620px;
+	}
+	#player-container.no-avatar {
+		margin-left: -390.5px;
+		width: 520px;
+	}
+	#player-container.ct #container2 #second_row{
+		background-color:#00a0ff;
+	}
+	#player-container.t #container2 #first_row #current_nick{
+		color: #ffa000;
+	}
+	#player-container.t #container2 #second_row{
+		background-color: #ffa000;
+	}
+	#team_money_2.low, #team_money_1.low{
+		color: #ff0000;
+	}
+	#player-container.ct #container2 #first_row #current_nick{
+		color: #00a0ff;
+	}
+	.no-avatar #avatar_container{
+		display:none;
+
+	}
+	.no-avatar #container2{
+		margin-left:0 !important;
+
+	}
+
+	.skull, .bomb{
+		filter: brightness(140%);
+	}
+	.defuse{
+		filter: brightness(200%);
+	}
+
+	#player-container i {
+		font-size: 30px;
+		left: 3px;
+	}
+
+	#health {
+		color: #2ecc71;
+	}
+
+	#health-text {
+		background-image: url("/files/img/hp.png");
+		background-repeat: no-repeat;
+		background-size: 30%;
+		background-position: left center;
+		padding-left: 40px;
+		display: inline-block;
+		font-size: 30px;
+		font-weight: 800;
+		width: 55px;
+	}
+
+	#health-bar {
+		display: inline-block;
+		width: calc(100% - 118px);
+		height: 20px;
+		transform: skewX(40deg);
+		background-color: rgba(0, 0, 0, 0.65);
+		overflow: hidden;
+		position: relative;
+	}
+	#stats_1st > .first_t > .round_team_1_name, #stats_1st > .sec_t > .round_team_2_name{
+		position:absolute; height:100%; width:45%; text-align: right;
+	}
+	#stats_2nd > .first_t > .round_team_1_name, #stats_2nd > .sec_t > .round_team_2_name{
+		position:absolute; height:100%; width:65%; text-align: right;
+	}
+
+	#armor,
+	#health {
+		height: 30px;
+	}
+
+	#armor {
+		margin-leftf: -5px;
+		color: #3498db;
+	}
+
+	#armor .fa-stack {
+		width: 35px;
+	}
+
+	#armor .fa-plus {
+		color: white;
+		font-size: 15px;
+		top: -5px;
+	}
+
+	#armor-text {
+		
+		background-repeat: no-repeat;
+		background-size: 29%;
+		background-position: left 40%;
+		display: inline-block;
+		font-size: 28px;
+		margin-left: 20px;
+		padding-left: 40px;
+		font-weight: 800;
+		width: 55px;
+		margin-top: 1px;
+	}
+	#armor-text.armor{
+		background-image: url("/files/img/armor.png");
+	}
+	#armor-text.helmet{
+		background-image: url("/files/img/helmet.png");
+	}
+	#armor-bar {
+		display: inline-block;
+		width: calc(100% - 98px);
+		height: 20px;
+		transform: skewX(40deg);
+		background-color: rgba(0, 0, 0, 0.65);
+		overflow: hidden;
+		position: relative;
+	}
+
+	/*ammo + reserve*/
+
+	#ammo-container {
+		position: fixed;
+		bottom: 0px;
+		right: -26px;
+		background-color: #2c3e50;
+		height: 63px;
+		width: 300px;
+		transform: skewX(-40deg);
+	}
+
+	#ammo-container #container2 {
+		margin-right: 60px;
+		transform: skewX(40deg);
+		float: right;
+	}
+	#container2{
+		height: 139px;
+		opacity:0.7;
+	}
+
+	#ammo-container span {
+		font-size: 50px;
+	}
+
+	#ammo-container .clip {
+		font-size: 50px;
+	}
+
+	#ammo-container .reserve {
+		font-size: 30px;
+	}
+
+	#first_row {
+		background-color:black;
+		height: 70%;
+		padding-left: 15px;
+		width: 450px;
+	}
+
+	.ct_color {
+		background-color: #5788a8 !important;
+	}
+
+	.t_color {
+		background-color: #c19511 !important;
+	}
+
+	#second_row {
+		height: 30%;
+		width: 450px;
+		padding-left: 15px;
+		text-shadow: 2px 2px 8px black;
+	}
+
+	#current_nick {
+		margin-top: 5px;
+		width: 40%;
+		font-family: industry, sans-serif;
+		font-weight: 600;
+		font-size: 30px;
+		display: inline-block;
+		white-space: nowrap;
+		
+		background-repeat: no-repeat;
+		background-position: 0 65%;
+		background-size: 27px;
+		padding-left:15px;
+		float:left;
+		overflow:hidden;
+	}
+	#current_nick.no-flag{
+		padding-left:0px;
+	}
+
+
+	#current_nick::before {
+		width: 27px;
+		height: 20px;
+		margin-right: 10px;
+	}
+
+	#player_bar1{
+		height: 55%;
+		width: 100%;
+	}
+
+	#player_bar2{
+		height: 35%;
+		width: 100%;
+		margin-bottom: 5px;
+	}
+
+
+	#health_armor {
+		font-family: industry, sans-serif;
+		height: 100%;
+		width: 50%;
+		float: left;
+		margin-left: 15px;
+		margin-top: 3px;
+	}
+	#round_stats {
+		height: 85px;
+		width: 100%;
+	}
+
+	#ammo {
+		font-family: industry, sans-serif;
+		height: 100%;
+		width: 40%;
+		float: right;
+		margin-left: 30px;
+		margin-top: 3px;
+	}
+
+	.inlining {
+		display: inline;
+	}
+
+	#stats {
+		float: right;
+		height: 100%;
+		width: 55%;
+		margin-top: 5px;
+		font-size: 25px;
+	}
+
+	#kills_play{
+		display: inline-block; 
+		float: left;
+		height: 100%;
+		width: 25%;
+		position: relative;
+	}
+
+	#player_kill{
+		width: 70%;
+		position: absolute;
+		float: left;
+	}
+	#kills_count{
+		width: 100%;
+		position: absolute;
+		margin-left: 40px;
+		float: right;
+	}
+
+	#assists_play{
+		display: inline-block; 
+		float: left;
+		height: 100%;
+		width: 25%;
+		position: relative;
+		margin-left: 18px;
+	}
+
+	#player_assist{
+		width: 70%;
+		position: absolute;
+		float: left;
+	}
+
+	#assist_count{
+		width: 50%;
+		position: absolute;
+		margin-left: 40px;
+		float: right;
+	}
+
+	#deaths_play{
+		display: inline-block; 
+		float: left;
+		height: 100%;
+		width: 25%;
+		position: relative;
+		margin-left: 15px;
+	}
+
+	#player_death{ 
+		width: 70%;
+		position: absolute;
+		float: left;
+	}
+
+	#death_count{ 
+		width: 50%;
+		margin-left: 40px;
+		position: absolute;
+		float: right;
+	}
+
+	#health-text {
+		display: inline-block;
+		font-size: 28px;
+		font-weight: 800;
+		width: 55px;
+	}
+
+	#clip-text {
+		display: inline-block;
+		font-size: 28px;
+		font-weight: 800;
+		width: 55px;
+		text-align: right;
+	}
+
+	#nick_also{
+		font: left;
+		width: 50px;
+		font-size: 20px;
+		margin-left: 15px;
+	}
+
+	#reserve-text {
+		display: inline-block;
+		font-size: 28px;
+		font-weight: 800;
+		width: 55px;
+	}
+
+	#nades {
+		height: 100%;
+		width: 50%;
+		float: right;
+		right: 30%;
+		margin-right: 38px;
+	}
+	#nades img {
+		height: 35px;
+        max-height: 35px;
+        width:auto;
+        filter: invert(100%);
+        float:right;
+        margin-right:10px;
+        margin-top: -6px;
+	}
+
+	.block{
+		width:83%;
+		height:45%;
+		margin: 2px;
+		background-color: rgba(255,255,255,0.3);
+	}
+	.ct .block.win{
+		background-color:rgba(111,179,224,1);
+	}
+	.t .block.win{
+		background-color:rgba(255,211,78,1);
+	}
+	#match_one_info .block{
+		float:left;
+	}
+	#match_two_info .block{
+		float:right;
+	}
+
+	#header {
+		width: 1050px;
+		height: 100px;
+		position: fixed;
+		top: 0;
+
+		left: 50%;
+		margin-left: -525px;
+	}
+
+	#match_tournament {
+		width: 17%;
+		margin: auto;
+		margin-top: -55px;
+		height: 55px;
+	}
+
+	#match_teams {
+		width: 100%;
+		margin-top: 5px;
+		height: 55px;
+		background: linear-gradient(to right, rgba(0, 0, 0, 0),rgba(0, 0, 0, 1) 500px, rgba(0, 0, 0, 1),rgba(0, 0, 0, 1) 550px ,rgba(0, 0, 0, 0));
+	}
+	#team_name{
+		text-shadow: 0 0 10px black;
+	}
+
+	#time_counter {
+		font-size: 22px;
+		font-weight: bold;
+		width: 13%;
+		height: 50%;
+		margin: auto;
+		text-align: center;
+		position:relative;
+		top: 5px;
+	}
+
+	#round_counter {
+		width: 13%;
+		height: 50%;
+		top: 5px;
+		font-size: 14px;
+		margin: auto;
+		text-align: center;
+		position:relative;
+		font-weight: 600; 
+	}
+
+	.team_info {
+		width: 40%;
+		font-size:27px;
+		text-transform: uppercase;
+		font-weight: bold;
+	}
+
+	#team_1 {
+		text-align:right;
+		float: left;
+		transform: skew(30deg);
+		background: linear-gradient(to right, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.3));
+	}
+	.ct-color{
+		color:#00a0ff;
+	}
+	.t-color{
+		color:#ffa000;
+	}
+
+	#team_2 {
+		text-align: left;
+		float: right;
+		transform: skew(-30deg);
+		background: linear-gradient(to left, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.3));
+	}
+	#team_score{
+		margin-top:10px;
+	}
+	#team_1 > #team_name{
+		margin-top:10px;
+		float:right;
+		transform: skew(-30deg);
+	}
+	#avatar_container img {
+		width:139px;
+		height:139px;
+		margin-top:70px;
+		margin-left:1px;
+	}
+
+	#team_2 > #team_name{
+		margin-top:10px;
+		float:left;
+		transform: skew(30deg);
+	}
+	#team_1 > #team_score{
+		padding-right:20px;
+		float:right;
+		transform: skew(-30deg);
+	}
+	#team_2 > #team_score{
+		padding-left:20px;
+		float:left;
+		transform: skew(30deg);
+	}
+	#team_logo{
+		position: relative;
+		width:10%;
+		height:100%;
+		margin-right:20px;
+		margin-left:20px;
+	}
+	#team_logo.empty{
+		width:0%;
+	}
+	#team_logo > img{
+		position: absolute;
+		margin-top:8px;
+		max-height: 80%;
+		max-width: 100%;
+		margin: auto;
+		top: 0;
+		left: 3px;
+		right: 0;
+		bottom: 0;
+		
+	}
+	#team_1>#team_logo > img{		
+		left: 5px;
+	}
+	#team_1>#team_logo{
+		float:right;
+		transform: skew(-30deg);
+	}
+	#team_2>#team_logo{
+		float:left;
+		transform: skew(30deg);
+	}
+	#flash-container {
+		position: fixed;
+		bottom: 0px;
+		
+		font-family: industry, sans-serif;
+		left: 50%;
+		margin-left: -550px;
+		height: 420px;
+		width: 1100px;
+		/*transform: skewX(40deg);*/
+	}
+	#match_tournament > div{
+		line-height: 30px;
+	}
+	#match_one_info{
+		float:left;
+		margin-left: 1px;
+		width:35px;
+		height: 100%;
+		text-align:right;
+		font-weight:600;
+	}
+	#match_two_info{
+		float:right;
+		width:35px;
+		height: 100%;
+		text-align:left;
+		font-weight:600;
+	}
+	#match_info{
+		margin-top: 60px;
+		margin-left: 876px;
+		margin-right: auto;
+		width: 169px;
+		text-align:center;
+		font-weight:500;
+		background: rgba(0,0,0,0.9);
+		position:relative;
+        transform: scaleY(1) perspective(2em) rotateX(-5deg);
+        font-size: 16px;
+	}
+	#who_won{
+		display:none;
+		position:absolute;
+		height:90px;
+		margin-left:-250px;
+		left:50%;
+		top:150px;
+		width:500px;
+		text-align: center;
+		background: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0));
+		font-family: industry, sans-serif;
+	}
+	#who_won div {
+		display:inline-block;
+	}
+
+	#win_ms {
+		height: 30px;
+		width: 50%;
+		margin-top: 5px;
+		font-size: 20px;
+	}
+
+	#winning_team {
+		display:inline-block;
+		margin-top: -10px;
+		font-size: 50px;
+		font-weight: 800; 
+	}
+
+	.win_team_logo {
+		height: 100%;
+		margin-top: 10px;
+		max-height: 80%;
+		max-width: 100px;
+	}
+
+	#win_team_logo_left {
+		float: left;
+	}
+
+	#win_tteam_logo_right {
+		float: right;
+	}
+
+	#leftlogo{
+	
+	}
+
+	.team {
+		width: 300px;
+		height: 650px;
+		margin-bottom: 70px;
+	}
+
+	#left {
+		position: fixed;
+		left: 0;
+		bottom: 10px;
+	}
+
+	.bar2 > .bar_subweapons{
+		width: 165px !important;
+	}
+
+	#right {
+		position: fixed;
+		right: 0;
+		bottom: 10px;
+	}
+
+	.playerdeaths{		
+		width: 300px;
+		height: 535px;
+		margin-bottom: 70px;	
+	}
+
+	#playerdeaths_left {
+		position: fixed;
+		left: 0;
+		bottom: 10px;
+	}
+
+	#playerdeaths_right {
+		position: fixed;
+		right: 0;
+		bottom: 10px;
+	}
+
+	.playerdeath {
+		width: 300px;
+		height: 75px;
+		margin-bottom: 2px;
+	}
+
+	#playerdeaths_left > .playerdeath {	
+        transform: scaleY(0.9) perspective(4em) rotateX(-5deg);
+        transform-origin: bottom left;
+		background: #4682b4;
+		margin-left: -335px;
+	}
+
+	#playerdeaths_right > .playerdeath {
+        transform: scaleY(0.9) perspective(4em) rotateX(-5deg);
+        transform-origin: bottom right;
+		background: #cd853f;
+		margin-left: 335px;
+	}
+
+	.playerob {		
+		width: 300px;
+		height: 531px;
+		margin-bottom: 74px;
+	}
+
+	.obplayer {
+		width: 296px;
+		height: 71px;
+		margin-bottom: 2px;
+    	border: solid #ffffff 2px;
+	}
+
+	#playerob_left {
+		position: fixed;
+		left: 0;
+		bottom: 10px;
+	}
+
+	#playerob_right {
+		position: fixed;
+		right: 0;
+		bottom: 10px;
+	}
+
+	#playerob_left > .obplayer {		
+		float: left;
+		background: linear;
+        transform: scaleY(0.9) perspective(4em) rotateX(-5deg);
+        transform-origin: bottom left;
+	}
+
+	#playerob_right > .obplayer {	
+		float: right;
+		background: linear;
+        transform: scaleY(0.9) perspective(4em) rotateX(-5deg);
+        transform-origin: bottom right;
+	}
+
+	.player {
+		background:linear-gradient(to bottom,#483d8b,rgba(0,0,0,0.25));
+		width: 300px;
+		height: 75px;
+		margin-bottom: 2px;
+    	border: solid #ffffff 0px;
+	}
+
+	.bar1{
+		width: 100%;
+		height: 33%;
+		font-size: 17px;
+		font-weight: bold;
+		position: relative;
+	}
+
+	.bar2{
+		width: 100%;
+		height: 40%;
+		font-size: 18px;
+		font-weight: bold;
+	}
+
+	.bar3{
+		width: 100%;
+		height: 26%;
+		font-size: 15px;
+		font-weight: bold;
+	}
+
+	#left > .player > .bar1 > .hp_bar{
+		width: 100%;
+		background: #4682b4;
+		height: 100%;
+		position: absolute;
+	}
+
+	#right > .player > .bar1 > .hp_bar{
+		float: right;
+		width: 100%;
+		background: #cd853f;
+		height: 100%;
+		position: absolute;
+	}
+
+	.money {
+		height: 50px;
+		background: rgba(0, 0, 0, 0.65);
+		margin-bottom: 5px;
+		text-shadow: 0 0 8px black;
+	}
+
+	#left > .money{
+		 background: linear-gradient(to right, rgba(0, 0, 0, 0.65) 195px, rgba(0, 0, 0, 0.65) 195px, rgba(0, 0, 0, 0.3) 310px, rgba(0, 0, 0, 0.0) 310px);
+	}
+	#right > .money{
+		 background: linear-gradient(to left, rgba(0, 0, 0, 0.65) 195px, rgba(0, 0, 0, 0.65) 195px, rgba(0, 0, 0, 0.3) 310px, rgba(0, 0, 0, 0.0) 310px);
+	}
+
+	#left > .player{
+		float: left;
+		background: linear;
+        transform: scaleY(0.9) perspective(4em) rotateX(-5deg);
+        transform-origin: bottom left;
+	}
+
+	#right > .player{
+		float: right;
+		background: linear;
+        transform: scaleY(0.9) perspective(4em) rotateX(-5deg);
+        transform-origin: bottom right;
+	}
+
+	.death {
+		height: 70% !important;
+        margin-top: 5px
+	}
+
+	.damage_bar{
+		display: block;
+		width: 100%;
+		height: 100%;		
+		position: absolute;
+		}
+
+	#left > .player > .bar1 > .damage_bar {
+		background: linear-gradient(to left, rgba(0,0,0,0) 0%, #ff0000 0%);
+	}
+
+	#right > .player > .bar1 > .damage_bar {
+		background: linear-gradient(to right, rgba(0,0,0,0) 0%, #ff0000 0%);
+	}
+
+	#left > .player > .bar1 > .hp_bar > .bar_username{
+		float: left;
+		padding-left: 20px;
+		height: 100%;
+		width: 120px;
+		overflow: hidden;
+		white-space: nowrap;
+		font-size: 17px;
+		transform: skew(5deg);
+        transform-origin: bottom left;
+        font-family: 'Noto Sans JP', sans-serif;
+
+	}
+
+	#right > .player > .bar1 > .hp_bar > .bar_username{
+		float: right;
+		padding-right: 40px;
+		height: 100%;
+		width: 120px;
+		overflow: hidden;
+		white-space: nowrap;
+		font-size: 17px;
+		transform: skew(-10deg);
+        transform-origin: bottom right;
+        text-align: right;
+        font-family: 'Noto Sans JP', sans-serif;
+
+	}
+
+	#left > .player > .bar1 > .hp_bar > .armors{
+		float: left;
+		width: 40px;
+		height: 100%;
+		text-align: center;
+		transform: skew(15deg);
+        transform-origin: bottom left;
+		}
+
+	#right > .player > .bar1 > .hp_bar > .armors{
+		float: right;
+		width: 40px;
+		height: 100%;
+		text-align: center;
+		transform: skew(-15deg);
+        transform-origin: bottom right;
+	}
+
+	#left > .player > .bar1 > .hp_bar > .hp_el{
+		float: left;
+		padding-left: 10px;
+		width: 40px;
+		height: 100%;
+		text-align: center;
+		transform: skew(20deg);
+        transform-origin: bottom left;
+		text-shadow: 0 0 8px black;
+		margin-top: 5px;
+	}
+
+	#right > .player > .bar1 > .hp_bar > .hp_el{
+		float: right;
+		padding-right: 10px;
+		width: 40px;
+		height: 100%;
+		text-align: center;
+		transform: skew(-20deg);
+        transform-origin: bottom left;
+		text-shadow: 0 0 8px black;
+		margin-top: 5px;
+	}
+
+	#left > .player > .bar2 > .bar_weapon {
+		float: right;
+		width: 120px;
+		height: 100%;
+		transform: skew(20deg);
+	}
+
+	#right > .player > .bar2 > .bar_weapon {
+		float: left;
+		width: 120px;
+		height: 100%;
+		transform: skew(-20deg);
+	}
+
+	.moneys.ct {
+		padding-left: 30px;
+		padding-right: 10px;
+		height: 100%;
+		width: 60px;
+		float: left;
+		transform: skew(2deg);
+	}
+
+	.moneys.t {
+		transform: skew(-2deg);
+		padding-right: 20px;
+		padding-left: 10px;
+		height: 100%;
+		width: 60px;
+		float: right;
+	}
+
+	.bomb_timer{
+		background-image:url('/files/img/elements/c4_timer_2.png');
+		background-repeat: no-repeat;
+		background-size: contain;
+		background-position: center;
+		-webkit-animation:bomb 0.8s ease-in-out infinite alternate;
+ 		-moz-animation:bomb 0.8s ease-in-out infinite alternate;
+ 		animation:bomb 0.8s ease-in-out infinite alternate;
+	}
+	@-webkit-keyframes bomb{
+		0% {opacity:0.8;}
+		100% {opacity:1;}
+	}
+	@-moz-keyframes bomb{
+		0% {opacity:0.8;}
+		100% {opacity:1;}
+	}
+	@keyframes bomb{
+		0% {opacity:0.8;}
+		100% {opacity:1;}
+	}
+
+	.bomb_vac{
+		margin: 0px auto;
+		height: 50%;
+		width: 50%;
+		border-radius: 50%;
+		background: radial-gradient(ellipse, rgba(255,0,0,1), rgba(255,0,0,0.1), rgba(255,0,0,0.8), rgba(255,0,0,0.7), rgba(255,0,0,0.48), rgba(255,0,0,0.3), rgba(255,0,0,0.2), rgba(255,0,0,0.1), rgba(0,0,0,0));
+		-webkit-animation:blink 0.8s ease-in-out infinite alternate;
+ 		-moz-animation:blink 0.8s ease-in-out infinite alternate;
+ 		animation:blink 0.8s ease-in-out infinite alternate;
+	}
+	@-webkit-keyframes blink{
+		0% {opacity:0;}
+		100% {opacity:1;}
+	}
+	@-moz-keyframes blink{
+		0% {opacity:0;}
+		100% {opacity:1;}
+	}
+	@keyframes blink{
+		0% {opacity:0;}
+		100% {opacity:1;}
+	}
+
+	.roundkill_count {
+		display: inline-block; 
+		width: 10px;
+	}
+
+	#left > .player > .bar3 > .roundkill_count {
+		float: left;
+		transform: skew(10deg);
+	}
+
+	#right > .player > .bar3 > .roundkill_count {
+		float: right;
+		transform: skew(-15deg);
+	}
+
+	.bomb_defuse.ct {
+		float: left;
+		width: 40px;
+		height: 100%;
+		transform: skew(10deg);
+	}
+
+	.bomb_defuse.t {
+		float: right;
+		width: 40px;
+		height: 100%;
+		transform: skew(-10deg);
+	}
+
+	#left > .player > .bar3 > .kills {
+		float: left;
+		width: 33px;
+		height: 100%;
+	}
+
+	#left > .player > .bar3 > .kill_icon {
+		float: left;
+		padding-left: 30px;
+		width: 15px;
+		height: 100%;
+	}
+
+	#left > .player > .bar3 > .deaths {
+		float: left;
+		width: 30px;
+		height: 100%;
+		transform: skew(5deg);
+	}
+
+	#left > .player > .bar3 > .death_icon {
+		float: left;
+		width: 15px;
+		height: 100%;
+		transform: skew(5deg);
+	}
+
+	#right > .player > .bar3 > .kills {
+		float: right;
+		width: 33px;
+		height: 100%;
+		transform: skew(-10deg);
+	}
+
+	#right > .player > .bar3 > .kill_icon {
+		float: right;
+		padding-left: 15px;
+		width: 15px;
+		height: 100%;
+		transform: skew(-10deg);
+	}
+
+	#right > .player > .bar3 > .death_icon {
+		float: right;
+		width: 15px;
+		height: 100%;
+		transform: skew(-5deg);
+	}
+
+	#right > .player > .bar3 > .deaths {
+		float: right;
+		width: 30px;
+		height: 100%;
+		transform: skew(-5deg);
+	}
+
+	#left > .player > .bar3 > .bar_subweapons{
+		float: left;
+		width: 140px;
+		height: 100%;
+		transform: skew(20deg);
+	}
+
+	#right > .player > .bar3 > .bar_subweapons{
+		float: right;
+		width: 140px;
+		height: 100%;
+		transform: skew(-15deg);
+	}
+
+	.bar2 > .bomb_defuse > img {
+		height: 75%;
+		width: auto;
+		margin: auto;
+		margin-top: 2px;
+		margin-left:2px;
+	}
+
+	.bar2 > .bar_weapon > img {
+		height: 75%;
+		width: auto;
+		margin: auto;
+		margin-top: 2px;
+		margin-left:2px;
+	}
+
+	.bar3 > .bar_subweapons > img {
+		max-height: 75%;
+		width: auto;
+		margin: auto;
+		margin-top: 2px;
+		margin-left:2px;
+	}
+
+	.bar1 > .hp_bar > .armors > img {
+		height: 75%;
+		width: auto;
+		margin: auto;
+		margin-top: 2px;
+		margin-left:2px;
+	}
+
+	.bar_weapon.ct>img {
+		float: right;
+		padding-right: 3px;
+	}
+
+	.bar_weapon.t>img {
+		float: left;
+		padding-right: 3px;
+	}
+
+	.bar_weapon>.invert {
+		filter: invert(70%);
+	}
+
+	.bar_subweapons.ct>img {
+		float: right;
+		padding-right: 3px;
+	}
+
+	.bar_subweapons.t>img {
+		float: left;
+		padding-right: 3px;
+	}
+
+	.bar_subweapons>.invert {
+		filter: invert(70%);
+	}
+
+	.bomb_defuse>.invert_brightness {
+		filter: brightness(5%) invert(100%);
+	}
+
+	.bar_weapon>.invert.checked {
+		filter: invert(100%);
+	}
+	.bar1 #weapon_icon{
+		max-width: 100%;
+		max-height: 100%;
+	}
+	.bar1 #weapon_icon img{
+		max-width: 90%;
+		max-height: 100%;
+	}
+
+	.bar_subweapons>.invert.checked {
+		filter: invert(100%);
+	}
+	.bar2 #subweapons_icon{
+		max-width: 100%;
+		max-height: 100%;
+	}
+	.bar2 #subweapons_icon img{
+		max-width: 90%;
+		max-height: 100%;
+	}
+
+	.bar2>.moneys {
+		color: #00b400;
+		font-weight: bold;
+	}
+	.bar2>.moneys.low{
+		color:#ff0000;
+	}
+
+	.img-hor {
+		-moz-transform: scaleX(-1);
+		-o-transform: scaleX(-1);
+		-webkit-transform: scaleX(-1);
+		transform: scaleX(-1);
+		filter: FlipH;
+		-ms-filter: "FlipH";
+	}
+
+	.bar1>.bar_weapon>img.invert {
+		filter: drop-shadow(0.5px 0.5px 1px white) drop-shadow(-0.5px -0.5px 1px white) invert(70%);
+	}
+
+	.bar1>.bar_weapon>img.checked.invert {
+		filter: drop-shadow(0.5px 0.5px 1px white) drop-shadow(-0.5px -0.5px 1px white) invert(100%);
+	}
+
+	#bar_username{
+		color:white;
+		text-shadow: 0 0 8px black;
+	}
+
+	#bar_username.dead{
+		color:rgba(255, 255, 255, 0.3)
+	}
+
+	.utility{	
+		height: 55px;
+		background:#696969;
+		margin-bottom: 4px;
+		font-weight: 600; 
+	}
+
+	#left > .utility{
+		background: linear-gradient(to right, rgba(0, 0, 0, 0.65) 195px, rgba(0, 0, 0, 0.65) 195px, rgba(0, 0, 0, 0.3) 310px, rgba(0, 0, 0, 0.0) 310px);
+	}
+
+	#right > .utility{
+		background: linear-gradient(to left, rgba(0, 0, 0, 0.65) 195px, rgba(0, 0, 0, 0.65) 195px, rgba(0, 0, 0, 0.3) 310px, rgba(0, 0, 0, 0.0) 310px);
+	}
+
+	.utility_bar{
+		height: 25%;
+		width: 100%;
+		float: right;
+	}
+
+	.utility_bar_name{
+		margin-top: 1px;
+		font-size: 12px;
+	}
+
+	#left > .utility > .utility_bar > .utility_bar_name{
+		margin-left: 15px;
+		float: left;
+        text-align: left;
+	}
+
+	#right > .utility > .utility_bar > .utility_bar_name{
+		margin-right: 15px;
+		float: right;
+        text-align: right;
+	}
+
+	#left > .utility > .utility_bar {	
+	    background: linear-gradient(to right, rgba(97, 183, 255, 0.65) 195px, rgba(97, 183, 255, 0.65) 195px, rgba(97, 183, 255, 0.3) 310px, rgba(97, 183, 255, 0.0) 310px);
+	}
+
+	#right > .utility > .utility_bar {		
+		background: linear-gradient(to left, rgba(255, 165, 77, 0.65) 195px, rgba(255, 165, 77, 0.65) 195px, rgba(255, 165, 77, 0.3) 310px, rgba(255, 165, 77, 0.0) 310px);
+	}
+
+	.nades_count{	
+		height: 100%;
+	}
+
+	.grenades{
+		margin-top: 14px;
+		margin-left: 3px;
+		float: left;
+		height: 50%;
+		font-size: 14px;
+	}
+
+	.grenades_count{
+		margin-top: 6px;
+		margin-left: 5px;
+		width: 10%;
+		float: left;
+		height: 10%;
+		font-size: 24px;
+	}
+
+	.smoke{		
+		margin-left: 9px;
+	}
+
+	.utility > .nades_count > .incens > .fire {		
+		margin-left: 9px;
+	}
+
+	.hes {
+		display: inline-block; 
+		height: 100%;
+		width: 23%;
+		margin-left: 30px;
+	}
+
+	.flashs {
+		display: inline-block; 
+		height: 100%;
+		width: 23%;
+		margin-left: -10px;
+	}
+
+	.smokes{
+		display: inline-block; 
+		height: 100%;
+		width: 23%;
+	}
+
+	.fires {
+		display: inline-block; 
+		height: 100%;
+		width: 20%;
+		margin-left: -10px;
+	}
+
+	.hes > img {
+		float:left;
+		max-height: 40%;
+		margin-top: 8px;
+	}
+
+	.flashs > img {
+		float:left;
+		max-height: 40%;
+		margin-top: 8px;
+	}
+
+	.smokes > img {
+		float:left;
+		max-height: 40%;
+		margin-top: 8px;
+	}
+
+	.fires > img{
+		float:left;
+		max-height: 40%;
+		margin-top: 8px;
+	}
+
+	.timeout_bac {
+		height: 100%;
+		font-size: 30px;
+	}
+
+	#left_timeout {
+		margin-top: -55px;
+		margin-left: 462px;
+		width: 400px;
+		height: 55px;
+		float: left;
+        transform: scaleY(0.9) perspective(1em) rotateX(-5deg);
+        visibility: hidden;
+		background: rgba(0, 160, 255,0.7);
+	}
+
+	.ct-bac_color {		
+		background: rgba(0, 160, 255,0.7);
+	}
+
+	.tt-bac_color {
+		background: rgba(255, 160, 0,0.7);
+	}
+
+	#right_timeout {
+		margin-top: -55px;
+		margin-right: 463px;
+		height: 55px;
+		width: 397px;
+		float: right;
+        transform: scaleY(0.9) perspective(1em) rotateX(-5deg);
+        visibility: hidden;
+		background: rgba(255, 160, 0,0.7);
+	}
+
+	.timeout_ms {
+		float: left;
+		margin-left: 80px;
+		margin-top: 5px;
+		width: 85%;
+		height: 100%;
+		font-weight: bold; 
+	}
+
+	.timeout_team {
+		display: inline-block;
+	}
+
+	#left_timeout > .timeout_ms >.timeout_team {
+	}
+
+	#right_timeout > .timeout_ms >.timeout_team {
+	}
+
+	#left_timeout > .timeout_ms >.timeout_count {
+		transform: skew(7deg);
+	}
+
+	#right_timeout > .timeout_ms >.timeout_count {
+		transform: skew(7deg);
+	}
+
+	#left_timeout > .timeout_ms >.timeout_max {
+		transform: skew(15deg);
+	}
+
+	#right_timeout > .timeout_ms >.timeout_max {
+		transform: skew(15deg);
+	}
+
+	.timeout_block {
+		display: inline-block;
+		border-radius: 50%;
+		width:35px;
+		height:35px;
+		float: right;
+		margin-top: 12px;
+		margin-right: 18px;
+		background-color: rgba(255,255,255,0.4);
+	}
+
+	.timeout_count{
+		margin-left: 15px;
+		display: inline-block;
+		height: 100%;
+		width: 25px;
+	}
+
+	.timeout_max {
+		display: inline-block;
+		height: 100%;
+		width: 45px;
+	}
